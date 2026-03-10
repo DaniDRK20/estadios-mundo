@@ -1,0 +1,274 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto Condensed', sans-serif;
+    background-color: #fff;
+    overflow-x: hidden;
+}
+
+.main-navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    background: transparent;
+    transition: all 0.4s ease;
+}
+
+.main-navbar.scrolled {
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    padding: 15px 60px;
+}
+
+.main-navbar.scrolled .logo,
+.main-navbar.scrolled .nav-links a {
+    color: #000 !important;
+}
+
+.logo { 
+    color: white; 
+    font-weight: 700; 
+    font-size: 1.2rem; 
+    letter-spacing: 1px; 
+}
+
+.nav-links { 
+    display: flex; 
+    gap: 25px; 
+    list-style: none; 
+    margin: 0; 
+}
+
+.nav-links a { 
+    color: white; 
+    text-decoration: none; 
+    font-size: 14px; 
+    text-transform: uppercase; 
+}
+
+.panel {
+    height: 100vh;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transform: scale(1.05);
+    transition: all 1.2s ease-out;
+}
+
+.panel.show {
+    opacity: 1;
+    transform: scale(1);
+}
+
+
+.estadios-layout {
+    width: 100%;
+    min-height: 100vh;
+    padding: 120px 5% 80px 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.contenedor-estadios-flex {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 40px;
+    width: 100%;
+    max-width: 1100px;
+}
+
+
+.columna-izquierda {
+    flex: 1.5;
+}
+
+
+
+.grid-parent {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 200px 200px; 
+    gap: 15px; 
+    overflow: hidden;
+}
+
+.grid-parent img    {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    border: 3px solid transparent;
+}
+
+.grid-parent img:hover {
+    transform: scale(1.1); 
+    filter: brightness(0.9);
+    border-radius: 15px;
+}
+
+.div1 { 
+    grid-column: 1; 
+    grid-row: 1; 
+}
+
+.div2 { 
+    grid-column: 1; 
+    grid-row: 2; 
+}
+
+.div3 { 
+    grid-column: 2; 
+    grid-row: 1 / span 2; 
+}
+
+.columna-derecha {
+    flex: 1;
+}
+
+#estadiosCarousel {
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.carousel-item img {
+    
+    height: 415px; 
+    object-fit: cover;
+}
+
+.carousel-title-top {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 12px;
+    text-align: center;
+    font-weight: 600;
+    z-index: 10;
+}
+
+@media (max-width: 992px) {
+    .contenedor-estadios-flex { flex-direction: column; }
+    .columna-izquierda, .columna-derecha { width: 100%; }
+}
+
+.main-footer {
+    background-color: #111; 
+    color: white;
+    padding: 60px 0 20px 0;
+    margin-top: 50px;
+    border-top: 4px solid #0d6efd; 
+}
+
+.footer-section {
+    padding: 10px;
+}
+
+.logo-footer {
+    font-weight: 800;
+    letter-spacing: 2px;
+    font-size: 1.4rem;
+}
+
+.footer-title {
+    font-size: 1rem;
+    margin-bottom: 15px;
+    color: #0d6efd;
+    font-weight: 700;
+}
+
+
+.footer-mail {
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 15px;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+.footer-mail:hover {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+}
+
+
+.social-links a {
+    color: white;
+    font-size: 1.6rem;
+    margin-left: 15px;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #0d6efd;
+    transform: translateY(-5px);
+}
+
+
+.footer-bottom {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    text-align: center;
+    font-size: 0.85rem;
+    color: #888;
+}
+
+.footer-bottom a {
+    color: #888;
+    text-decoration: none;
+}
+
+.footer-bottom a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+
+@media (max-width: 768px) {
+    .footer-section { text-align: center !important; }
+    .social-links { justify-content: center; display: flex; margin-top: 10px; }
+}
+
+
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+body.dark-mode .estadio-layout, 
+body.dark-mode .main-navbar.scrolled {
+    background-color: #1a1a1a;
+}
+
+body.dark-mode .estadio-name-dark, 
+body.dark-mode .text-box p, 
+body.dark-mode .main-navbar.scrolled .logo, 
+body.dark-mode .main-navbar.scrolled .nav-links a {
+    color: #ffffff !important;
+}
+
+body.dark-mode .estadio-subtitle-dark {
+    color: #bbb;
+}
+
+body.dark-mode .raya-divisora {
+    border-color: #333;
+}
